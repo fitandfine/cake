@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ram Prasad Chapain - Contact Page</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Lazy-loading background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/bg.webp') no-repeat center center fixed;
+            background-size: cover;
+            filter: blur(5px);
+            z-index: -1;
+        }
+
+        /* Header */
+        .header {
+            padding: 15px 10px;
+            background: rgba(255, 255, 255, 0.9);
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #00796b;
+        }
+
+        .header h2 {
+            margin: 5px 0;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        /* Profile Section */
+        .profile-photo {
+            margin: 20px auto;
+        }
+
+        .profile-photo img {
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+            border: 4px solid #00796b;
+            object-fit: cover;
+        }
+
+        /* Translucent Section for Details */
+        .personal-info {
+            margin: 20px auto;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .personal-info p {
+            margin: 5px 0;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        /* Buttons Section */
+        .buttons-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .buttons-section button {
+            flex: 1 1 calc(45% - 10px);
+            max-width: 150px;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            color: #fff;
+            background: #00796b;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .buttons-section button:hover {
+            background: #005a48;
+            transform: scale(1.05);
+        }
+
+        /* Footer Section */
+        .footer {
+            margin: 20px auto;
+            padding: 15px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+        }
+
+        .footer button {
+            background: #00796b;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            font-size: 0.8rem;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .footer button:hover {
+            background: #005a48;
+        }
+
+        /* Popup Styling */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            color: #333;
+        }
+
+        .popup img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .popup .close-btn {
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #e74c3c;
+        }
+
+        .popup .close-btn:hover {
+            color: #c0392b;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .header h2 {
+                font-size: 0.9rem;
+            }
+
+            .buttons-section button {
+                flex: 1 1 calc(100% - 10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>Ram Prasad Chapain</h1>
+        <h2>Hardware Supplier | Network Marketing</h2>
+    </div>
+
+    <!-- Profile Section -->
+    <div class="profile-photo">
+        <img src="images/profile.jpg" alt="Profile Photo">
+    </div>
+
+    <!-- Personal Info -->
+    <div class="personal-info">
+        <p><strong>Address:</strong> Nepalgunj, Banke, Nepal</p>
+        <p><strong>Contact:</strong> +977 9858019555</p>
+        <p><strong>Email:</strong> <a href="mailto:Naya527808@gmail.com">Naya527808@gmail.com</a></p>
+    </div>
+
+    <!-- Buttons Section -->
+    <div class="buttons-section">
+        <button onclick="makeCall()">Call</button>
+        <button onclick="sendSMS()">SMS</button>
+        <button onclick="sendWhatsApp()">WhatsApp</button>
+        <button onclick="sendEmail()">Email</button>
+    </div>
+
+<!-- Save My Number Button -->
+<div class="buttons-section">
+    <button onclick="downloadVCF()">Save My Number</button>
+</div>
+
+<script>
+    // Function to download vCard file
+    function downloadVCF() {
+        const vcfData = `
+BEGIN:VCARD
+VERSION:3.0
+FN:Ram Prasad Chapain
+N:Chapain;Ram Prasad;;;
+TEL;TYPE=CELL:+9779858019555
+EMAIL;TYPE=INTERNET:emailofanup@gmail.com
+ADR;TYPE=HOME:;;Nepalgunj, Banke, Nepal;;;;
+ORG:Hardware Supplier and Network Marketing
+TITLE:Entrepreneur
+NOTE:Contact for hardware supplies and network marketing
+END:VCARD
+        `.trim();
+
+        const blob = new Blob([vcfData], { type: "text/vcard" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "Ram_Prasad_Chapain.vcf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+</script>
+
+
+    <!-- Footer -->
+    <div class="footer">
+        <button onclick="showQRPopup()">Show QR</button>
+        <button onclick="nativeShare()">Share Page</button>
+        <button onclick="showAboutPopup()">About Developer</button>
+       
+    </div>
+
+    <!-- QR Popup -->
+    <div class="popup" id="qr-popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="hidePopup('qr-popup')">&times;</span>
+            <h3>Scan to Share</h3>
+            <img src="images/qr.png" alt="QR Code">
+        </div>
+    </div>
+
+    <!-- About Developer Popup -->
+    <div class="popup" id="about-popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="hidePopup('about-popup')">&times;</span>
+            <h3>About Developer</h3>
+            <p>Developed with love by <strong>Anup</strong> in Auckland, NZ.</p>
+            <p>Email: <a href="mailto:emailofanup@gmail.com">emailofanup@gmail.com</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Call Function
+        function makeCall() {
+            window.open("tel:+9779858019555");
+        }
+
+        // SMS Function
+        function sendSMS() {
+            window.open("sms:+9779858019555");
+        }
+
+        // WhatsApp Function
+        function sendWhatsApp() {
+            window.open("https://wa.me/9779858019555?text=Hello%20Ram%20Prasad%20Chapain", "_blank");
+        }
+
+        // Email Function
+        function sendEmail() {
+            window.location.href = "mailto:Naya527808@gmail.com";
+        }
+
+        // Native Share Function
+        function nativeShare() {
+            if (navigator.share) {
+                navigator.share({
+                    title: "Ram Prasad Chapain's Contact Page",
+                    text: "Check out Ram Prasad Chapain's contact page!",
+                    url: window.location.href
+                }).catch((err) => console.error("Sharing failed:", err));
+            } else {
+                alert("Sharing is not supported on this browser.");
+            }
+        }
+
+        // Show QR Popup
+        function showQRPopup() {
+            document.getElementById("qr-popup").style.display = "flex";
+        }
+
+        // Show About Developer Popup
+        function showAboutPopup() {
+            document.getElementById("about-popup").style.display = "flex";
+        }
+
+        // Hide Popup
+        function hidePopup(popupId) {
+            document.getElementById(popupId).style.display = "none";
+        }
+    </script>
+</body>
+</html>
