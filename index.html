@@ -98,6 +98,24 @@
             color: #111827;
             text-align: center;
         }
+        /* Social Media Buttons Styling */
+.buttons-section button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background: rgba(0, 128, 255, 0.9);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+    margin: 10px;
+}
+
+.buttons-section button:hover {
+    background: rgba(0, 100, 200, 0.9);
+    transform: scale(1.1);
+}
+
 
         /* Buttons Section */
         .buttons-section {
@@ -194,6 +212,24 @@
             margin: 10px 0 0;
             font-size: 0.9rem;
         }
+        /* Profile Photo Section */
+.profile-photo {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1.5s ease-in;
+}
+
+.profile-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 204, 128, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -209,17 +245,22 @@
     </style>
 </head>
 <body>
+     <!-- Language Toggle -->
+     <div class="language-toggle">
+        <button onclick="switchLanguage('en')">English</button>
+        <button onclick="switchLanguage('nep')">नेपाली</button>
+    </div>
     <!-- Header -->
     <div class="header">
         <h1 id="header-title">Mahesh Bakery and Dairy Udyog</h1>
         <h2 id="subheader-title">100% Vegetarian Cakes, Drinks, and More!</h2>
     </div>
+<!-- Profile Image Section -->
+<div class="profile-photo">
+    <img src="images/profile.jpg" alt="Profile Photo">
+</div>
 
-    <!-- Language Toggle -->
-    <div class="language-toggle">
-        <button onclick="switchLanguage('en')">English</button>
-        <button onclick="switchLanguage('nep')">नेपाली</button>
-    </div>
+   
 
     <!-- Content Section -->
     <div class="content">
@@ -239,6 +280,12 @@
         <button onclick="sendEmail()">Email</button>
         <button onclick="downloadVCF()">Save My Number</button>
     </div>
+<!-- Social Media Buttons Section -->
+<div class="buttons-section">
+    <button onclick="visitFacebook()">Facebook</button>
+    <button onclick="visitYouTube()">YouTube</button>
+    <button onclick="visitTikTok()">TikTok</button>
+</div>
 
     <!-- Footer -->
     <div class="footer">
@@ -247,7 +294,19 @@
         <button onclick="aboutDeveloper()">About Developer</button>
         <p>Developed with love by Anup in Auckland, NZ!</p>
     </div>
-
+<!-- About Developer Popup -->
+<div class="popup" id="about-popup">
+    <div class="popup-content">
+        <span class="close-btn" onclick="hidePopup('about-popup')">&times;</span>
+        <h3>About Developer</h3>
+        <p>Developed with love by Anup in Auckland, NZ!</p>
+        <button onclick="window.open('https://www.instagram.com/anupcp/', '_blank')" 
+                style="background: #e1306c; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer;">
+            Visit Instagram
+        </button>
+        <p>Email: <a href="mailto:emailofanup@gmail.com" style="color: #007bff;">emailofanup@gmail.com</a></p>
+    </div>
+</div>
     <!-- QR Popup -->
     <div class="popup" id="qr-popup">
         <div class="popup-content">
@@ -326,8 +385,12 @@ END:VCARD
         }
 
         function aboutDeveloper() {
-            alert("Developed with love by Anup! Instagram: https://www.instagram.com/anupcp/");
-        }
+    document.getElementById("about-popup").style.display = "flex";
+}
+function hidePopup(popupId) {
+    document.getElementById(popupId).style.display = "none";
+}
+
 
         function showQR() {
             document.getElementById("qr-popup").style.display = "flex";
@@ -336,6 +399,20 @@ END:VCARD
         function hidePopup(popupId) {
             document.getElementById(popupId).style.display = "none";
         }
+
+        // Open Social Media Links
+function visitFacebook() {
+    window.open("https://www.facebook.com/share/uMCtk7cf9a6dXCFK/", "_blank");
+}
+
+function visitYouTube() {
+    window.open("https://youtube.com/@maheshchaudhary-q6z?si=xqRgLiftq1scwiCB", "_blank");
+}
+
+function visitTikTok() {
+    window.open("https://www.tiktok.com/@maheshbakeryanddairy?_t=8rZbbOZTwo6&_r=1", "_blank");
+}
+
     </script>
 </body>
 </html>
