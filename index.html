@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ram Prasad Chapain - Contact Page</title>
+    <title>Mahesh Bakery and Dairy Udyog</title>
     <style>
-        /* General styles */
+        /* General Styles */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -15,9 +15,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            background-color: #f4f4f4;
-            color: #333;
-            text-align: center;
+            background: #fff8e1;
             overflow-x: hidden;
         }
 
@@ -31,58 +29,69 @@
             height: 100%;
             background: url('images/bg.webp') no-repeat center center fixed;
             background-size: cover;
-            filter: blur(5px);
+            filter: blur(4px);
             z-index: -1;
         }
 
         /* Header */
         .header {
-            padding: 15px 10px;
-            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            background: rgba(255, 204, 0, 0.9);
             width: 100%;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .header h1 {
+            font-size: 2.2rem;
             margin: 0;
-            font-size: 1.8rem;
-            color: #00796b;
+            color: #d84315;
+            animation: bounce 2s infinite;
         }
 
         .header h2 {
-            margin: 5px 0;
-            font-size: 1rem;
-            color: #333;
+            font-size: 1.2rem;
+            color: #5d4037;
+            margin: 10px 0;
         }
 
         /* Profile Section */
         .profile-photo {
             margin: 20px auto;
+            animation: fadeIn 2s ease-in;
         }
 
         .profile-photo img {
             width: 150px;
             height: auto;
             border-radius: 50%;
-            border: 4px solid #00796b;
-            object-fit: cover;
+            border: 4px solid #ffcc80;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
         /* Translucent Section for Details */
         .personal-info {
-            margin: 20px auto;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.8);
+            margin: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
             width: 90%;
-            max-width: 500px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .personal-info p {
-            margin: 5px 0;
-            color: #333;
-            font-size: 1rem;
+            margin: 10px 0;
+            color: #6d4c41;
+            font-size: 1.1rem;
+        }
+
+        .intro {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #795548;
+            margin: 20px 0;
+            animation: fadeIn 3s ease-in-out;
         }
 
         /* Buttons Section */
@@ -90,106 +99,87 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
             max-width: 600px;
             margin: 20px auto;
         }
 
         .buttons-section button {
-            flex: 1 1 calc(45% - 10px);
-            max-width: 150px;
-            padding: 10px 15px;
-            font-size: 0.9rem;
+            padding: 12px 20px;
+            font-size: 1rem;
             color: #fff;
-            background: #00796b;
+            background: #ff7043;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
+            transition: transform 0.2s, background-color 0.3s;
         }
 
         .buttons-section button:hover {
-            background: #005a48;
-            transform: scale(1.05);
+            background: #d84315;
+            transform: scale(1.1);
         }
 
-        /* Footer Section */
+        /* Footer */
         .footer {
-            margin: 20px auto;
+            margin: 20px;
             padding: 15px;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(66, 66, 66, 0.9);
             color: #fff;
             text-align: center;
         }
 
         .footer button {
-            background: #00796b;
+            background: #ff7043;
             border: none;
             color: white;
-            padding: 10px 15px;
-            font-size: 0.8rem;
-            border-radius: 5px;
-            margin: 5px;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            margin: 10px;
             cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
+            transition: transform 0.2s, background-color 0.3s;
         }
 
         .footer button:hover {
-            background: #005a48;
+            background: #d84315;
+            transform: scale(1.1);
         }
 
-        /* Popup Styling */
-        .popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 10;
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
-        .popup-content {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            width: 90%;
-            max-width: 400px;
-            color: #333;
-        }
-
-        .popup img {
-            width: 150px;
-            margin-bottom: 20px;
-        }
-
-        .popup .close-btn {
-            font-size: 1.5rem;
-            font-weight: bold;
-            cursor: pointer;
-            color: #e74c3c;
-        }
-
-        .popup .close-btn:hover {
-            color: #c0392b;
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
         }
 
         @media (max-width: 768px) {
             .header h1 {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
             }
 
             .header h2 {
-                font-size: 0.9rem;
+                font-size: 1rem;
             }
 
             .buttons-section button {
-                flex: 1 1 calc(100% - 10px);
+                width: 100%;
+                max-width: 300px;
             }
         }
     </style>
@@ -197,8 +187,8 @@
 <body>
     <!-- Header -->
     <div class="header">
-        <h1>Ram Prasad Chapain</h1>
-        <h2>Hardware Supplier | Network Marketing</h2>
+        <h1 id="header-title">Order Cake</h1>
+        <h2 id="subheader-title">Mahesh Bakery and Dairy Udyog</h2>
     </div>
 
     <!-- Profile Section -->
@@ -206,11 +196,16 @@
         <img src="images/profile.jpg" alt="Profile Photo">
     </div>
 
+    <!-- Intro Section -->
+    <div class="intro" id="intro-text">
+        Welcome to Mahesh Bakery and Dairy Udyog! We specialize in 100% vegetarian cakes, delicious ice creams, refreshing drinks, and amazing gift items for every occasion!
+    </div>
+
     <!-- Personal Info -->
     <div class="personal-info">
-        <p><strong>Address:</strong> Nepalgunj, Banke, Nepal</p>
-        <p><strong>Contact:</strong> +977 9858019555</p>
-        <p><strong>Email:</strong> <a href="mailto:Naya527808@gmail.com">Naya527808@gmail.com</a></p>
+        <p><strong>Address:</strong> Tikapur, Khadga Chowk, Nepal</p>
+        <p><strong>Contact:</strong> +977 9822697625 / +977 9865740853</p>
+        <p><strong>Email:</strong> <a href="mailto:maheshbd25@gmail.com">maheshbd25@gmail.com</a></p>
     </div>
 
     <!-- Buttons Section -->
@@ -219,115 +214,70 @@
         <button onclick="sendSMS()">SMS</button>
         <button onclick="sendWhatsApp()">WhatsApp</button>
         <button onclick="sendEmail()">Email</button>
+        <button onclick="viewSocialMedia()">Follow Us</button>
+        <button onclick="downloadVCF()">Save My Number</button>
     </div>
-
-<!-- Save My Number Button -->
-<div class="buttons-section">
-    <button onclick="downloadVCF()">Save My Number</button>
-</div>
-
-<script>
-    // Function to download vCard file
-    function downloadVCF() {
-        const vcfData = `
-BEGIN:VCARD
-VERSION:3.0
-FN:Ram Prasad Chapain
-N:Chapain;Ram Prasad;;;
-TEL;TYPE=CELL:+9779858019555
-EMAIL;TYPE=INTERNET:emailofanup@gmail.com
-ADR;TYPE=HOME:;;Nepalgunj, Banke, Nepal;;;;
-ORG:Hardware Supplier and Network Marketing
-TITLE:Entrepreneur
-NOTE:Contact for hardware supplies and network marketing
-END:VCARD
-        `.trim();
-
-        const blob = new Blob([vcfData], { type: "text/vcard" });
-        const link = document.createElement("a");
-        link.href = URL.createObjectURL(blob);
-        link.download = "Ram_Prasad_Chapain.vcf";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
-</script>
-
 
     <!-- Footer -->
     <div class="footer">
-        <button onclick="showQRPopup()">Show QR</button>
-        <button onclick="nativeShare()">Share Page</button>
         <button onclick="showAboutPopup()">About Developer</button>
-       
-    </div>
-
-    <!-- QR Popup -->
-    <div class="popup" id="qr-popup">
-        <div class="popup-content">
-            <span class="close-btn" onclick="hidePopup('qr-popup')">&times;</span>
-            <h3>Scan to Share</h3>
-            <img src="images/qr.png" alt="QR Code">
-        </div>
-    </div>
-
-    <!-- About Developer Popup -->
-    <div class="popup" id="about-popup">
-        <div class="popup-content">
-            <span class="close-btn" onclick="hidePopup('about-popup')">&times;</span>
-            <h3>About Developer</h3>
-            <p>Developed with love by <strong>Anup</strong> in Auckland, NZ.</p>
-            <p>Email: <a href="mailto:emailofanup@gmail.com">emailofanup@gmail.com</a></p>
-        </div>
+        <p>Developed with love by Anup in Auckland, NZ!</p>
     </div>
 
     <script>
         // Call Function
         function makeCall() {
-            window.open("tel:+9779858019555");
+            window.open("tel:+9779822697625");
         }
 
         // SMS Function
         function sendSMS() {
-            window.open("sms:+9779858019555");
+            window.open("sms:+9779822697625");
         }
 
         // WhatsApp Function
         function sendWhatsApp() {
-            window.open("https://wa.me/9779858019555?text=Hello%20Ram%20Prasad%20Chapain", "_blank");
+            window.open("https://wa.me/9779822697625?text=Hello%20Mahesh%20Bakery", "_blank");
         }
 
         // Email Function
         function sendEmail() {
-            window.location.href = "mailto:Naya527808@gmail.com";
+            window.location.href = "mailto:maheshbd25@gmail.com";
         }
 
-        // Native Share Function
-        function nativeShare() {
-            if (navigator.share) {
-                navigator.share({
-                    title: "Ram Prasad Chapain's Contact Page",
-                    text: "Check out Ram Prasad Chapain's contact page!",
-                    url: window.location.href
-                }).catch((err) => console.error("Sharing failed:", err));
-            } else {
-                alert("Sharing is not supported on this browser.");
-            }
+        // Social Media Links
+        function viewSocialMedia() {
+            alert(`
+Follow Mahesh Bakery and Dairy Udyog:
+Facebook (Owner): https://www.facebook.com/share/bBFjNsgJrztsBKhy/
+Facebook (Business): https://www.facebook.com/share/uMCtk7cf9a6dXCFK/
+YouTube: https://youtube.com/@maheshchaudhary-q6z?si=xqRgLiftq1scwiCB
+TikTok: https://www.tiktok.com/@maheshbakeryanddairy?_t=8rZbbOZTwo6&_r=1
+            `);
         }
 
-        // Show QR Popup
-        function showQRPopup() {
-            document.getElementById("qr-popup").style.display = "flex";
-        }
+        // Download VCF File
+        function downloadVCF() {
+            const vcfData = `
+BEGIN:VCARD
+VERSION:3.0
+FN:Mahesh Bakery and Dairy Udyog
+TEL;TYPE=CELL:+9779822697625
+TEL;TYPE=CELL:+9779865740853
+EMAIL:maheshbd25@gmail.com
+ADR:Tikapur, Khadga Chowk, Nepal
+ORG:Mahesh Bakery and Dairy Udyog
+NOTE:100% Vegetarian Cakes, Drinks, Ice Creams, and Gifts!
+END:VCARD
+            `.trim();
 
-        // Show About Developer Popup
-        function showAboutPopup() {
-            document.getElementById("about-popup").style.display = "flex";
-        }
-
-        // Hide Popup
-        function hidePopup(popupId) {
-            document.getElementById(popupId).style.display = "none";
+            const blob = new Blob([vcfData], { type: "text/vcard" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "Mahesh_Bakery_Contact.vcf";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
     </script>
 </body>
